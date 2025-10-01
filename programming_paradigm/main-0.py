@@ -9,7 +9,13 @@ def main():
         sys.exit(1)
 
     command, *params = sys.argv[1].split(':')
-    amount = float(params[0]) if params else None
+    amount = None
+    if params:
+        try:
+            amount = float(params[0])
+        except ValueError:
+            print("Error: Amount must be a number.")
+            sys.exit(1)
 
     if command == "deposit" and amount is not None:
         account.deposit(amount)
