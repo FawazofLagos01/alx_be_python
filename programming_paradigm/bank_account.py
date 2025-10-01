@@ -1,4 +1,4 @@
-class BankAccount():
+class BankAccount:
     def __init__(self, initial_balance=0):
         """Initialize account with an optional starting balance."""
         self.account_balance = initial_balance
